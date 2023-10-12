@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+
+.flex {
+  display: flex;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+img:hover {
+  border: 2px dashed blue;
+  cursor: pointer;
+}
+
+img~div {
+  position: absolute;
+  top: 700px;
+  text-align: center;
+  width: 100%;
+}
+
+img~div>button {
+  margin: 10px;
+}
+
+.inventario {
+  position: absolute;
+  top: 350px;
+  left: 1200px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+  color: #cc0000;
+  font-size: 36px;
+  margin-top: 20px;
+}
+
+.section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.section ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+#comenzar-link,
+#inicio-link {
+  display: block;
+  text-align: center;
+  background-color: #cc0000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+#comenzar-link:hover,
+#inicio-link:hover {
+  background-color: #990000;
+}

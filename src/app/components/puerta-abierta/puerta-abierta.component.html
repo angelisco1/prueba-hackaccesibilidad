@@ -1,0 +1,6 @@
+<img src="assets/puerta-abierta.png" width="290" (click)="toggleAcciones()" />
+
+<div *ngIf="mostrarAcciones">
+  <button type="button" *ngFor="let accion of acciones" (click)="ejecutarAccion(accion)">{{accion.evento |
+    titlecase}}</button>
+</div>

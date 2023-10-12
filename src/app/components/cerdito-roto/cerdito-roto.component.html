@@ -1,0 +1,7 @@
+<img src="assets/cerdito-roto.png" width="80" (click)="toggleAcciones()" />
+
+
+<div *ngIf="mostrarAcciones">
+  <button type="button" *ngFor="let accion of acciones" (click)="ejecutarAccion(accion)">{{accion.evento |
+    titlecase}}</button>
+</div>

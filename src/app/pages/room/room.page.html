@@ -1,0 +1,53 @@
+<app-armario-cerrado *ngIf="armarioCerrado; else armarioAbierto"
+  (onExecuteAction)="ejecutarAccion($event)"></app-armario-cerrado>
+<ng-template #armarioAbierto>
+  <app-armario-abierto (onExecuteAction)="ejecutarAccion($event)"></app-armario-abierto>
+
+  <app-caja-herramientas-cerrada *ngIf="cajaHerramientasCerrada; else cajaHerramientasAbierta"
+    (onExecuteAction)="ejecutarAccion($event)"></app-caja-herramientas-cerrada>
+  <ng-template #cajaHerramientasAbierta>
+    <app-caja-herramientas-abierta (onExecuteAction)="ejecutarAccion($event)"></app-caja-herramientas-abierta>
+
+    <app-martillo *ngIf="martilloEnHabitacion" (onExecuteAction)="ejecutarAccion($event)"></app-martillo>
+    <app-lupa *ngIf="lupaEnHabitacion" (onExecuteAction)="ejecutarAccion($event)"></app-lupa>
+  </ng-template>
+
+  <app-libro *ngIf="libroEnHabitacion" (onExecuteAction)="ejecutarAccion($event)"></app-libro>
+
+  <app-cerdito *ngIf="huchaCerditoNueva; else huchaCerditoRota"
+    (onExecuteAction)="ejecutarAccion($event)"></app-cerdito>
+  <ng-template #huchaCerditoRota>
+    <app-cerdito-roto (onExecuteAction)="ejecutarAccion($event)"></app-cerdito-roto>
+    <app-post-it *ngIf="postitEnHabitacion" (onExecuteAction)="ejecutarAccion($event)"></app-post-it>
+  </ng-template>
+
+</ng-template>
+
+
+<app-caja-fuerte-cerrada *ngIf="cajaFuerteCerrada; else cajaFuerteAbierta"
+  (onExecuteAction)="ejecutarAccion($event)"></app-caja-fuerte-cerrada>
+<ng-template #cajaFuerteAbierta>
+  <app-caja-fuerte-abierta (onExecuteAction)="ejecutarAccion($event)"></app-caja-fuerte-abierta>
+  <app-llave *ngIf="llaveEnHabitacion" (onExecuteAction)="ejecutarAccion($event)"></app-llave>
+</ng-template>
+
+<app-cuadro-colgado *ngIf="cuadroColgado; else cuadroEnSuelo"
+  (onExecuteAction)="ejecutarAccion($event)"></app-cuadro-colgado>
+<ng-template #cuadroEnSuelo>
+  <app-cuadro (onExecuteAction)="ejecutarAccion($event)"></app-cuadro>
+</ng-template>
+
+
+<app-puerta-cerrada *ngIf="puertaCerrada; else puertaAbierta"
+  (onExecuteAction)="ejecutarAccion($event)"></app-puerta-cerrada>
+<ng-template #puertaAbierta>
+  <app-puerta-abierta (onExecuteAction)="ejecutarAccion($event)"></app-puerta-abierta>
+</ng-template>
+
+
+<div class="inventario">
+  <h3>Inventario:</h3>
+  <ul>
+    <li *ngFor="let item of objetosDelInventario">{{item | titlecase}}</li>
+  </ul>
+</div>
