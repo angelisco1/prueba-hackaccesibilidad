@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ElementosDeLaHabitacion } from 'src/app/services/objetos';
 
 @Component({
   selector: 'app-room',

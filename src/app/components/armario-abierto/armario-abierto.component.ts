@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { EventsService } from 'src/app/services/events.service';
+import { filter } from 'rxjs'
 
 @Component({
   selector: 'app-armario-abierto',
@@ -18,7 +20,20 @@ export class ArmarioAbiertoComponent {
 
   mostrarAcciones = false
 
+  constructor(private eventsService: EventsService) { }
+
+  ngOnInit() {
+    this.eventsService.onShowActions
+      .pipe(
+        filter((mostrarAccionesDe: string) => this.id !== mostrarAccionesDe)
+      )
+      .subscribe(() => {
+        this.mostrarAcciones = false
+      })
+  }
+
   toggleAcciones() {
+    this.eventsService.onShowActions.emit(this.id)
     this.mostrarAcciones = !this.mostrarAcciones
   }
 
